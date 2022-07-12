@@ -1,0 +1,11 @@
+{
+  "name": "questronix-node-api",
+  "version": "1.0.0",
+  "description": "\"ExpressJS api using the common http methods\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dondomie Dungca",
+  "license": "ISC"
+}
