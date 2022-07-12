@@ -13,7 +13,7 @@ router.post("/create-post", async (req, res, next) => {
   let result = await postController.addPost({ title, description });
 
   if (!result)
-    return next(new Error("Title and Description need to have a value"));
+    return next(new Error("Something went wrong about creating your post"));
 
   res.send({
     success: true,
