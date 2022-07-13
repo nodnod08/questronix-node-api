@@ -12,3 +12,26 @@ module.exports.addPost = async function (data) {
 
   return result ? true : false;
 };
+
+module.exports.getAllPosts = async function () {
+  let result = await Post.find();
+
+  return result;
+};
+
+module.exports.getPost = async function (id) {
+  let result = await Post.findOne({
+    _id: id,
+  });
+
+  return result;
+};
+
+module.exports.findByIdAndUpdate = async function (id, data) {
+  let result = await Post.findByIdAndUpdate(id, data, {
+    new: true,
+    runValidators: true,
+  });
+
+  return result;
+};
