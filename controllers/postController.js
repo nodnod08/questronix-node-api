@@ -27,11 +27,17 @@ module.exports.getPost = async function (id) {
   return result;
 };
 
-module.exports.findByIdAndUpdate = async function (id, data) {
+module.exports.findByIdAndUpdate = async function (id) {
   let result = await Post.findByIdAndUpdate(id, data, {
     new: true,
     runValidators: true,
   });
+
+  return result;
+};
+
+module.exports.findByIdAndDelete = async function (id) {
+  let result = await Post.findByIdAndDelete(id);
 
   return result;
 };

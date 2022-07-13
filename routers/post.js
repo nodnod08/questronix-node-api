@@ -70,4 +70,22 @@ router.put("/:id", async (req, res, next) => {
   });
 });
 
+router.delete("/:id", async (req, res, next) => {
+  const id = req.params.id;
+  let document;
+
+  try {
+    document = await postController.findByIdAndDelete(id);
+  } catch (error) {
+    return next(new Error(error.message));
+  }
+
+  res.send({
+    success: true,
+    error: false,
+    message: "Post deleted",
+    data: document,
+  });
+});
+
 module.exports = router;
